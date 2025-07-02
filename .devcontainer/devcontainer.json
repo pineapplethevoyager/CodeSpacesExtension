@@ -1,0 +1,25 @@
+
+{
+	"name": "Default Linux Universal",
+	"image": "mcr.microsoft.com/devcontainers/universal:2-linux",
+	"features": {
+		"ghcr.io/microsoft/codespace-features/external-repository:latest": {
+			"cloneUrl": "https://msazure.visualstudio.com/DefaultCollection/CloudNativeCompute/_git/aks-rp",
+			"folder": "/workspaces/ado-repos"
+		},
+		  "ghcr.io/prulloac/devcontainer-features/pre-commit:1.0.3": {},	
+	},
+	"workspaceFolder": "/workspaces/ado-repos",
+	"initializeCommand": "mkdir -p ${localWorkspaceFolder}/../ado-repos",
+  "postStartCommand": "external-git clone",
+  "postAttachCommand": "external-git config",
+
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"GitHub.copilot",
+				"GitHub.copilot-chat",
+			]
+		}
+	}
+}
